@@ -1,0 +1,36 @@
+#!groovy
+node {
+  stage ('Git Clone')
+  {
+    echo "*****Cloning the code base*****"
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b7cc42d3-e533-44fd-9568-2791d79ae36d', url: 'https://KSPraveen@bitbucket.org/KSPraveen/test.git']]])
+
+    env.GIT_COMMIT = sh(script: "git rev-parse HEAD", returnStdout: true).trim()
+  }
+
+  stage ('Build Jar')
+  {
+    echo "*****Building the extension jar*****"
+    sh 'ls -lart'
+  }
+  
+  stage ('Build Jar')
+  {
+    echo "*****Ear Build*****"
+    sh 'ls -lart'
+  }
+  
+  
+  stage ('Psuh to artifacotry')
+  {
+    echo "*****Building the extension jar*****"
+    sh 'ls -lart'
+  }
+  
+  stage ('Deploy to Target Env')
+  {
+    echo "*****Building the extension jar*****"
+    sh 'ls -lart'
+  }
+}  
+  
