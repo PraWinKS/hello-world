@@ -21,7 +21,7 @@ node {
   }
   
   
-  stage ('Psuh to artifacotry')
+  stage ('Push to artifacotry')
   {
     echo "*****Building the extension jar*****"
     sh 'ls -lart'
@@ -31,6 +31,13 @@ node {
   {
     echo "*****Building the extension jar*****"
     sh 'ls -lart'
+  } 
+
+  stage('example')
+  { 
+  echo "just know how it works"
+    sh 'pwd'
   }
+
 }  
   
